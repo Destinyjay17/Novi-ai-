@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novi AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0f19;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #252b3a;
+    }
+
+    header h1 {
+      font-size: 32px;
+    }
+
+    header p {
+      color: #9ca3af;
+      margin-top: 6px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .box {
+      background: #131927;
+      border: 1px solid #293144;
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 130px;
+      resize: none;
+      background: #090d16;
+      color: white;
+      border: 1px solid #343c50;
+      border-radius: 12px;
+      padding: 15px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #6366f1;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .image {
+      background: #6366f1;
+      color: white;
+    }
+
+    .video {
+      background: #22c55e;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    #result {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #090d16;
+      border-radius: 12px;
+      color: #cbd5e1;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #101624;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #252d40;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>✨ Novi AI</h1>
+    <p>Create amazing content with AI</p>
+  </header>
+
+  <main class="container">
+
+    <div class="box">
+      <h2>What do you want to create?</h2>
+
+      <textarea id="prompt"
+        placeholder="Describe the image or video you want to create..."></textarea>
+
+      <div class="buttons">
+        <button class="image" onclick="generateImage()">
+          🖼️ Generate Image
+        </button>
+
+        <button class="video" onclick="generateVideo()">
+          🎬 Generate Video
+        </button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <div class="box">
+      <h2>What Novi AI can do</h2>
+
+      <div class="features">
+
+        <div class="feature">
+          <h3>🖼️ AI Images</h3>
+          <p>Create images from simple text prompts.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🎬 AI Videos</h3>
+          <p>Turn your ideas into AI-generated videos.</p>
+        </div>
+
+        <div class="feature">
+          <h3>✨ Creative Tools</h3>
+          <p>Build and experiment with your own AI tools.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function generateImage() {
+      const prompt = document.getElementById("prompt").value.trim();
+      const result = document.getElementById("result");
+
+      if (!prompt) {
+        result.style.display = "block";
+        result.innerText = "Please enter a description first.";
+        return;
+      }
+
+      result.style.display = "block";
+      result.innerText =
+        "🖼️ Image generation is ready to be connected to an AI image model.";
+    }
+
+    function generateVideo() {
+      const prompt = document.getElementById("prompt").value.trim();
+      const result = document.getElementById("result");
+
+      if (!prompt) {
+        result.style.display = "block";
+        result.innerText = "Please enter a description first.";
+        return;
+      }
+
+      result.style.display = "block";
+      result.innerText =
+        "🎬 Video generation is ready to be connected to an AI video model.";
+    }
+  </script>
+
+</body>
+  </html>
