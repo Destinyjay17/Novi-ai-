@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novi AI</title>
+</head>
+<body>
+  <h1>✨ Novi AI</h1>
+  <p>Describe the image you want to create.</p>  <textarea id="prompt" placeholder="Example: A futuristic city at night..."></textarea><br><br>
+
+<button onclick="generateImage()">Generate Image</button>
+
+  <p id="status"></p>
+  <div id="result"></div>  <script>
+    async function generateImage() {
+      const prompt = document.getElementById("prompt").value;
+      const status = document.getElementById("status");
+
+      if (!prompt.trim()) {
+        status.textContent = "Please enter a description.";
+        return;
+      }
+
+      status.textContent = "Novi AI is working...";
+
+      // Image-generation connection will be added in the next step.
+      status.textContent = "The image generator will be connected next.";
+    }
+  </script></body>
+</html>
